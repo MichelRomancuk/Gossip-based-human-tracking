@@ -11,7 +11,11 @@ Gossip-based-human-tracking uses OpenCV with raspberry pi cameras to track a per
 
 ## Installation
 
-Explain how to install your project, if necessary.
+Following these steps, should allow you to recreate the project:
 
 ```bash
-npm install my-project
+sudo apt update
+```
+```bash
+sudo apt install build-essential cmake
+```
