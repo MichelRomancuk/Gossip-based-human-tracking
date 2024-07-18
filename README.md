@@ -48,6 +48,54 @@ There you can also assign different display colors to your pi's.
 
 This project is designed such that it can be used with an Ad-hoc network, or your existing wifi-network at home. It should also work in a mesh-wifi network, but this has not been tested yet. 
 
+### Ad-hoc network
 To set up an Ad-hoc network, you need to follow these steps:
+```bash
+cd /etc/network
+sudo cp interfaces wifi-interface
+sudo nano adhoc-interface
+```
+Now copy the following and paste it into the file:
+```bash
+  auto lo
+  iface lo inet loopback
+  iface eth0 inet dhcp
 
+  auto wlan0
+  iface wlan0 inet static
+  address 192.168.2.1
+  netmask 255.255.255.0
+  wireless-channel 4
+  wireless-essid PiEyeNet
+  wireless-mode ad-hoc
+```
+To enable the pi hosting the Ad-hoc network to assign an IP to the other raspberry pi's, execute following command
+```bash
+sudo apt-get install isc-dhcp-server
+```
+To configure the dhcp-server use:
+```bash
+sudo nano /etc/dhcp/dhcpd.conf
+```
+and change the contents to:
+```bash
+  ddns-update-style interim;
+  default-lease-time 600;
+  max-lease-time 7200;
+  authoritative;
+  log-facility local7;
+  subnet 192.168.2.0 netmask 255.255.255.0 {
+   range 192.168.2.5 192.168.2.150;
 
+  }
+```
+With the ad-hoc network ready to go, switch to the network directory with
+```bash
+cd /etc/network
+```
+and enable it with:
+```bash
+sudo cp /etc/network/wifi-interface interfaces
+```
+
+Now you can connect all raspberry pi's to the network 'PiEyeNet' and start the gossip.py program.
