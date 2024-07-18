@@ -1,3 +1,0 @@
-Michel;PiEyeB;7
-Natalia;PiEyeB;8
-NaN;NaN;0
