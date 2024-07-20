@@ -1,6 +1,6 @@
 # Gossip-based-human-tracking
 
-Gossip-based-human-tracking uses OpenCV with raspberry pi cameras to track a person across a Pi-network using a Gossip-Protocol
+This is a project for the university of basel. In this project, we created an easy to use face-recognition program that uses a gossip-protocol to reliably transmit the information across a network. In addition, we provide a short guide for a wireless adhoc network. All this runs on Raspberry Pi's. The original plan was to create an additional mesh-network that is one level below the application layer. This might come in the near future. Currently each Pi makes use of the broadcast function local networks provide and the codebase is heavily focused on the gossip protocol. 
 
 ## Table of Contents
 - [Requirements](#requirements)
