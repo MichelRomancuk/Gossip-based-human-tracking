@@ -3,11 +3,19 @@
 Gossip-based-human-tracking uses OpenCV with raspberry pi cameras to track a person across a Pi-network using a Gossip-Protocol
 
 ## Table of Contents
-
+- [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+
+## Requirements
+
+For hardware we used: 
+- 3 Raspberry pi 5 with 8 gb of ram (Any Pi should work, although a pi zero 2 w took over 48h to compile dlib in our case)
+- 2 NoiR camera for Raspberry pi (A camera with an Infrared filter works fine, but in darker settings, the camera without a filter works better)
+- 1 or 3 USB wifi dongles (TP-Link AC600 HIGH GAIN WI-FI USB AD is our recommendation because it works out of the box on raspberry pi OS. At least one is needed for an adhoc network. Equip the others with one too for better range)
+- The 3D-files we used for this project can be found here:
 
 ## Installation
 
